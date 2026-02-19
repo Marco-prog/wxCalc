@@ -1,29 +1,39 @@
-# Percorsi include e librerie
-WX_INCLUDE = C:/msys64/ucrt64/include/wx-3.3
-WX_SETUP   = C:/msys64/ucrt64/lib/wx/include/msw-unicode-3.3
-WX_LIB     = C:/msys64/ucrt64/lib
+# Compilatore e tools
+CXX = g++
+WINDRES = windres
 
-# Librerie wxWidgets comuni
-WX_LIBS = -lwx_baseu-3.3 -lwx_mswu_core-3.3 -lwx_mswu_aui-3.3 \
-          -lwx_mswu_adv-3.3 -lwx_mswu_html-3.3 -lwx_mswu_propgrid-3.3 -lwx_mswu_richtext-3.3
+# Flag di compilazione
+CXXFLAGS = `wx-config --cxxflags` -std=c++17
+LDFLAGS = `wx-config --libs`
+
+# Usa wildcard per trovare automaticamente tutti i .cpp
+SOURCES = $(wildcard *.cpp)
+OBJECTS = $(SOURCES:.cpp=.o)
+
+# File resource
+RC_FILE = app.rc
+RC_OBJECT = app_res.o
 
 # Nome eseguibile
 TARGET = main.exe
 
-# Sorgenti
-SRC = main.cpp mainFrame.cpp MyFrame.cpp
-
-# Compilatore e flags
-CXX = g++
-CXXFLAGS = -I$(WX_INCLUDE) -I$(WX_SETUP)
-LDFLAGS  = -L$(WX_LIB) $(WX_LIBS) -mwindows
-
-# Target di default
+# Regola principale
 all: $(TARGET)
 
-$(TARGET): $(SRC)
-	$(CXX) $(SRC) $(CXXFLAGS) $(LDFLAGS) -o $(TARGET)
+# Compila il resource file
+$(RC_OBJECT): $(RC_FILE) app.manifest
+	$(WINDRES) $(RC_FILE) -O coff -o $(RC_OBJECT)
 
-# Pulisce i file generati
+# Linka tutto insieme
+$(TARGET): $(OBJECTS) $(RC_OBJECT)
+	$(CXX) -o $@ $^ $(LDFLAGS) -mwindows
+
+# Regola generica per compilare .cpp in .o
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Pulizia
 clean:
-	-rm -f $(TARGET) *.o
+	rm -f $(OBJECTS) $(RC_OBJECT) $(TARGET)
+
+.PHONY: all clean

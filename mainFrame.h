@@ -34,7 +34,7 @@ class mainFrame : public wxFrame
 	private:
 
 	protected:
-		wxStaticText* m_staticInserimento;
+		wxStaticText* m_staticN1;
 		wxTextCtrl* m_textN1;
 		wxStaticText* m_staticN2;
 		wxTextCtrl* m_textN2;
@@ -48,7 +48,7 @@ class mainFrame : public wxFrame
 
 	public:
 
-		mainFrame( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 500,300 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
+		mainFrame( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 500,500 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
 
 		~mainFrame();
 

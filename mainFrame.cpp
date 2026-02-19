@@ -16,9 +16,9 @@ mainFrame::mainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	wxBoxSizer* bSizer1;
 	bSizer1 = new wxBoxSizer( wxVERTICAL );
 
-	m_staticInserimento = new wxStaticText( this, wxID_ANY, _("N1"), wxPoint( -1,-1 ), wxDefaultSize, 0 );
-	m_staticInserimento->Wrap( -1 );
-	bSizer1->Add( m_staticInserimento, 0, wxALL, 5 );
+	m_staticN1 = new wxStaticText( this, wxID_ANY, _("N1"), wxPoint( -1,-1 ), wxDefaultSize, 0 );
+	m_staticN1->Wrap( -1 );
+	bSizer1->Add( m_staticN1, 0, wxALL, 5 );
 
 	m_textN1 = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	bSizer1->Add( m_textN1, 0, wxALL, 5 );

@@ -11,7 +11,7 @@ void MyFrame::Somma(wxCommandEvent& event)
 {
     long n1, n2;
     if (m_textN1->GetValue().ToLong(&n1) &&
-        m_textN1->GetValue().ToLong(&n2))
+        m_textN2->GetValue().ToLong(&n2))
     {
         long totale = n1 + n2;
         m_textTotale->SetValue(wxString::Format("%ld", totale));
