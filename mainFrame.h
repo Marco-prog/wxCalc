@@ -34,21 +34,21 @@ class mainFrame : public wxFrame
 	private:
 
 	protected:
-		wxStaticText* m_staticText3;
-		wxTextCtrl* m_textCtrl1;
-		wxStaticText* m_staticText4;
-		wxTextCtrl* m_textCtrl3;
-		wxStaticText* m_staticText5;
-		wxTextCtrl* m_textCtrl4;
-		wxButton* m_button4;
+		wxStaticText* m_staticInserimento;
+		wxTextCtrl* m_textN1;
+		wxStaticText* m_staticN2;
+		wxTextCtrl* m_textN2;
+		wxStaticText* m_staticTotale;
+		wxTextCtrl* m_textTotale;
+		wxButton* m_buttonSomma;
 
 		// Virtual event handlers, override them in your derived class
-		virtual void somma( wxCommandEvent& event ) { event.Skip(); }
+		virtual void Somma( wxCommandEvent& event ) { event.Skip(); }
 
 
 	public:
 
-		mainFrame( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 280,150 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
+		mainFrame( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 500,300 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
 
 		~mainFrame();
 
