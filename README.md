@@ -74,6 +74,9 @@ git clone https://github.com/Marco-prog/wxCalc.git
 ### 9️⃣Compilazione 
 ```
 cd wxCalc
+mkdir build
+cd build
+cmake -G "Unix Makefiles" ..
 make
-./main.exe
+./wxCalc
 ```

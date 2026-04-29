@@ -1,0 +1,10 @@
+// Forza l'uso del tuo manifest invece di quello predefinito di wxWidgets
+#define wxUSE_NO_MANIFEST 0
+
+#include <wx/msw/wx.rc>
+
+// Il tuo file personalizzato
+1 24 "app.manifest"
+
+// L'ID deve essere "aaaa" o un numero basso per essere l'icona principale
+aaaa ICON "../res/32officeicons-16_89723"
