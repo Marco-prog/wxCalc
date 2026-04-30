@@ -71,12 +71,11 @@ pacman -S git
 git clone https://github.com/Marco-prog/wxCalc.git
 ```
 
-### 9️⃣Compilazione 
+### 9️⃣Compilazione ed esecuzione 
 ```
 cd wxCalc
 mkdir build
-cd build
-cmake -G "Unix Makefiles" ..
-make
-./wxCalc
+cmake -B build
+cmake --build build
+./build/wxCalc
 ```

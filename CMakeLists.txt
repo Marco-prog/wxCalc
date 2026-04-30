@@ -22,7 +22,7 @@ file(GLOB SOURCES "src/*.cpp")
 if(WIN32)
     # Aggiunge il file di risorse alla lista dei sorgenti
     list(APPEND SOURCES "win32/app.rc")
-    # Aiuta il compilatore di risorse a trovare il manifest nella cartella win32
+    # windres usa win32/ come base per trovare res/ e app.manifest
     set(CMAKE_RC_FLAGS "-I ${CMAKE_CURRENT_SOURCE_DIR}/win32")
 
     # Se vuoi evitare la console nera dietro l'app grafica
