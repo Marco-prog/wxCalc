@@ -1,4 +1,5 @@
 # wxCalc
+
 Un semplice esempio di programma in C++ con uso di wxWidgets (somma di due numeri)
 
 ---
@@ -7,9 +8,7 @@ Un semplice esempio di programma in C++ con uso di wxWidgets (somma di due numer
 
 ---
 
-
 ### 0️⃣Scarica ed installa MSYS2
-
 
 ### 1️⃣ Apri (MSYS2) la shell giusta
 
@@ -25,6 +24,7 @@ pacman -Syu
 ```
 
 ---
+
 ### 3️⃣ Installa wxWidgets 3.3 (UCRT)
 
 ```bash
@@ -60,6 +60,7 @@ pacman -S make
 ```
 
 ### 7️⃣Installare git
+
 ```
 pacman -S git
 ```
@@ -67,11 +68,19 @@ pacman -S git
 ---
 
 ### 8️⃣Clona da git il progetto
+
 ```
 git clone https://github.com/Marco-prog/wxCalc.git
 ```
 
-### 9️⃣Compilazione ed esecuzione 
+### 9️⃣Installa cmake per mingw
+
+```
+
+```
+
+### 1️⃣0️⃣Compilazione ed esecuzione
+
 ```
 cd wxCalc
 mkdir build
